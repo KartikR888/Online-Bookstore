@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookStore - Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">BookStore</a>
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop Books</a></li>
+        <li><a href="ebook.html">E-Books</a></li>
+        <li><a href="sellbook.html">Sell Books</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Checkout & Payment</h2>
+    <div class="checkout-grid" style="margin-top: 1.5rem;">
+      <!-- Customer Info Form -->
+      <form class="checkout-form" id="checkout-form">
+        <h3>1. Delivery Information</h3>
+        <label>Full Name</label>
+        <input type="text" placeholder="John Doe" required>
+
+        <label>Email (for E-Book download link)</label>
+        <input type="email" placeholder="john@example.com" required>
+
+        <label>Shipping Address (for Physical books)</label>
+        <input type="text" placeholder="123 Street Name, City">
+
+        <h3>2. Mock Payment</h3>
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9101 1121" required>
+
+        <div style="display: flex; gap: 1rem;">
+          <div style="flex: 1;">
+            <label>Expiry</label>
+            <input type="text" placeholder="MM/YY" required>
+          </div>
+          <div style="flex: 1;">
+            <label>CVV</label>
+            <input type="text" placeholder="123" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Complete Purchase</button>
+      </form>
+
+      <!-- Order Summary -->
+      <div class="checkout-form">
+        <h3>Order Summary</h3>
+        <p style="margin: 1rem 0;">Items in order: <strong id="order-count">0</strong></p>
+        <p style="margin: 1rem 0;">Total Amount Due: <strong>₹<span id="order-total">0.00</span></strong></p>
+        <p style="color: #64748b; font-size: 0.85rem;">E-books will be emailed immediately. Physical books will arrive in 3-5 business days.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Online BookStore. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cart = getCart();
+      const countElement = document.getElementById("order-count");
+      const totalElement = document.getElementById("order-total");
+
+      countElement.textContent = cart.length;
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      totalElement.textContent = total.toFixed(2);
+
+      const checkoutForm = document.getElementById("checkout-form");
+      checkoutForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Payment successful! Your order has been placed.");
+        localStorage.removeItem("bookstore_cart");
+        window.location.href = "shop.html";
+      });
+    });
+  </script>
+</body>
+</html>

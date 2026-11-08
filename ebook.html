@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookStore - E-Books</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">BookStore</a>
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop Books</a></li>
+        <li><a href="ebook.html">E-Books</a></li>
+        <li><a href="sellbook.html">Sell Books</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="section-title">Digital Library (E-Books)</h2>
+    
+    <div class="book-grid">
+      <div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DlN_Z0UEVR_5yDOldpGXL7zolgPFVNyfkjwWnBlrpQ&s=10" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Mastering React & Next.js</h3>
+  <p>120 Pages</p>
+  <div class="price">₹14.99</div>
+  <button class="btn" onclick="addToCart('Mastering React & Next.js', 14.99, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQiUzusycHHh03cDaDxE93E_nlCdVWDbDhlkAKzpXwCEH9JFyRLa9HS7ASoqwpRke6L7ydroGZNTuYxhKsce4eNsGz28rl0Xa_tetsUsSY&usqp=CAc" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Python for Data Analysis</h3>
+  <p>500 Pages</p>
+  <div class="price">₹12.49</div>
+  <button class="btn" onclick="addToCart('Python for Data Analysis', 12.49, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5rgsBRL8XxIim_KyM42UF6O3mXBpX3HOvupRKt-kqQ&s=10" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Clean Code in TypeScript</h3>
+  <p>100 Pages</p>
+  <div class="price">₹11.99</div>
+  <button class="btn" onclick="addToCart('Clean Code in TypeScript', 11.99, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy5HtAyd9oDeDRawNLfiCnDH2YF2liiXtj-do5PRnZjA&s=10" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>System Design Essentials</h3>
+  <p>200 Pages</p>
+  <div class="price">₹16.99</div>
+  <button class="btn" onclick="addToCart('System Design Essentials', 16.99, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9diMGJFzyg1TnqFIuAH-yZGhjQpmKllSDbZT2l2wFWg&s" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Full-Stack Node.js & Express</h3>
+  <p>259 Pages</p>
+  <div class="price">₹10.99</div>
+  <button class="btn" onclick="addToCart('Full-Stack Node.js & Express', 10.99, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB2lg4BBXFlXwj6dlEWn0N3dngO_N7JjoIe9zcARphCg&s" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Docker & Kubernetes Handbook</h3>
+  <p>462 Pages</p>
+  <div class="price">₹15.50</div>
+  <button class="btn" onclick="addToCart('Docker & Kubernetes Handbook', 15.50, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlYGG3E4XXDN3gvHXRo59TFD5LyWqLFJpatmYx28cJ8g&s" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>CSS Architecture & Animation</h3>
+  <p>315 Pages</p>
+  <div class="price">₹8.99</div>
+  <button class="btn" onclick="addToCart('CSS Architecture & Animation', 8.99, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2vV4E3KVDhUTjtEYptcWDBy1yZzCeHXUg55irpfcfbQ&s" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Go Programming from Scratch</h3>
+  <p>272</p>
+  <div class="price">₹13.49</div>
+  <button class="btn" onclick="addToCart('Go Programming from Scratch', 13.49, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQauTHhmNrJunOy4OCun5fgYtpZ1QkzEcHRV3gNIsqr9aQwwoWnC3ahoB-irIIpRsUfpUyH7pvOzkhtFt-fnQ-Pf5t_lckZhiUk8s3CqE3Gy283vgCZRSp_0rykB3yR71SV9tayUg&usqp=CAc" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Practical Machine Learning</h3>
+  <p>159</p>
+  <div class="price">₹18.00</div>
+  <button class="btn" onclick="addToCart('Practical Machine Learning', 18.00, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTG2uQTGt289836QgPiIB2sK4msgDWTq1m3cO48xP7iw&s=10" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Database Indexing & Tuning</h3>
+  <p>521</p>
+  <div class="price">₹14.00</div>
+  <button class="btn" onclick="addToCart('Database Indexing & Tuning', 14.00, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRwxMoasKaY0bAJImnLayHk8Ksh_qi1O5tq1ZLdvhen_yyuMBGin6vRmEHjzrR9oZPcDY6mlk51ZbikJnnnpNJdV1CB8kDidm5yR_NKVZ1-ykDj8TFv57qY&usqp=CAc" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Microservices Architecture</h3>
+  <p>265</p>
+  <div class="price">₹17.50</div>
+  <button class="btn" onclick="addToCart('Microservices Architecture', 17.50, 'E-Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://m.media-amazon.com/images/I/61jY8jWCd7L._UF1000,1000_QL80_.jpg" alt="Cover">
+  <span class="badge badge-ebook">E-Book (PDF/EPUB)</span>
+  <h3>Web Security & Ethical Hacking</h3>
+  <p>624</p>
+  <div class="price">₹12.99</div>
+  <button class="btn" onclick="addToCart('Web Security & Ethical Hacking', 12.99, 'E-Book')">Add to Cart</button>
+</div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Online BookStore. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>

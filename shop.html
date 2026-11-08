@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookStore - Shop Physical Books</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">BookStore</a>
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop Books</a></li>
+        <li><a href="ebook.html">E-Books</a></li>
+        <li><a href="sellbook.html">Sell Books</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="user-greeting" style="margin-bottom: 1rem;"></h2>
+    <h2 class="section-title">Top Selling Books</h2>
+    
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDvqkHUz-HDxnMYmIgsv-P8QPlh0oCfa4UtVzcGBItGg&s=10" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 4.9⭐</span>
+        <h3>The Psycology of Money</h3>
+        <p>Morgan Housel</p>
+        <div class="price">₹150.00</div>
+        <button class="btn" onclick="addToCart('The Psycology of Money', 150.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBPvYzRGPLZjzxpUfJl4cgWaBAWe8dJCowsn-2y8LWMg&s=10" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 4.6⭐</span>
+        <h3>Lessions in Chemistry</h3>
+        <p>Bonnie Garmus</p>
+        <div class="price">₹100.00</div>
+        <button class="btn" onclick="addToCart('Lessions in Chemistry', 100.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTipfR1fGaD8preL3WwuDNM3XFJmEN4UbNyWbsP4m6gzg&s=10" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 5.0⭐</span>
+        <h3>King of Envy</h3>
+        <p>ANA Huang</p>
+        <div class="price">₹200.00</div>
+        <button class="btn" onclick="addToCart('King of Envy', 200.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmNLVZ3UYb2VsTp8uSVGkAKMUs_63T9q6EF-q1TpcDdLaybUijclYUYpjccWg7Yd-uynmqgjVb8RYCJvHWX4q5Q9sptQ_t" alt="Cover">
+        <span class="badge badge-physical">3D Book <br> 4.5⭐</span>
+        <h3>I K I G A I</h3>
+        <p>Hutchinson</p>
+        <div class="price">₹300.00</div>
+        <button class="btn" onclick="addToCart('I K I G A I', 300.00, '3D Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-j3TF_PTksJMI19KR3Cd5erZCxdMjbAyFzRA49jVI7UOWBjtsQM22cbCzdge_ZiQBHcv5arkgQFE9s7MjhH-sT-ZUCo_I" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 5⭐</span>
+        <h3>You Can</h3>
+        <p>Prakash Books</p>
+        <div class="price">₹180.00</div>
+        <button class="btn" onclick="addToCart('You Can', 180.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTTyM5mMqq-WGTasORDrY9Pjrbvf8ltlJT9w3xM3Wq6_C8WR_ud-y0fCBYU9xxrU6FHwEr44fh4eG5j2tQiT1ACOC7dhtkb8yOkYq_QzDDnTIp4XpCsc71nF5Y" alt="Cover">
+        <span class="badge badge-physical">Kids Book <br> 3.9⭐</span>
+        <h3>The Cat and The Rat</h3>
+        <p>A Phonics Reader</p>
+        <div class="price">₹130.00</div>
+        <button class="btn" onclick="addToCart('The Cat and The Rat', 130.00, 'Kids Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTYw6FqokQU6AI6mm0TJq8lpDKm9sETJ-BJpMyft8Q1ta0Z0MrO8jYa8691yH4qMan3ASuAmH9GymWLn77JuJ0ihhGNHixK8UUblCngv96o" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 5.1⭐</span>
+        <h3>A Study in Scarlet</h3>
+        <p>Sherlock Holmes</p>
+        <div class="price">₹119.00</div>
+        <button class="btn" onclick="addToCart('A Study in Scarlet', 119.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQyae-qJboH4cKRe-Rn00AGoIUKYGqZmUvlFndzKnulaLcfjNXcth1Rh-I1liSL1L0e8Zf0U8mxot01nJ4p-2g5DVDjL29XuxkHzom_yIiu8tz-fmbCntIuy8g" alt="Cover">
+        <span class="badge badge-physical">Physical Book <br> 5.5⭐</span>
+        <h3>The Power of Your Subconscious Mind</h3>
+        <p>Joseph Murphy</p>
+        <div class="price">₹226.00</div>
+        <button class="btn" onclick="addToCart('The Power of Your Subconscious Mind', 226.00, 'Physical Book')">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg" alt="Atomic Habits Cover">
+  <span class="badge badge-physical">Physical Book <br> 4.8⭐</span>
+  <h3>Atomic Habits</h3>
+  <p>James Clear</p>
+  <div class="price">₹450.00</div>
+  <button class="btn" onclick="addToCart('Atomic Habits', 450.00, 'Physical Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://www.masaischool.com/blog/content/images/2022/07/Books-Every-Programmer-Must-Read_The-pragmatic-programmer_Masai.jpg" alt="The Psychology of Money Cover">
+  <span class="badge badge-physical">Pratical Book <br> 5.2⭐</span>
+  <h3>The Pragmatic Programmer</h3>
+  <p>David Thomas</p>
+  <div class="price">₹275.00</div>
+  <button class="btn" onclick="addToCart('The pragmatic Programmer', 275.00, 'Pratical Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRerlLoSS435vB7hK6bFwbLQnuYgHFNzkM6eOUmbSGM5Q&s=10" alt="Ikigai Cover">
+  <span class="badge badge-physical">Magical Book <br> 3.6⭐</span>
+  <h3>The book of Magic</h3>
+  <p>Héctor García & Francesc Miralles</p>
+  <div class="price">₹310.00</div>
+  <button class="btn" onclick="addToCart('The book of Magic', 310.00, 'magical Book')">Add to Cart</button>
+</div>
+
+<div class="book-card">
+  <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388211242i/69571.jpg" alt="Rich Dad Poor Dad Cover">
+  <span class="badge badge-physical">Physical Book <br> 4.7⭐</span>
+  <h3>Rich Dad Poor Dad</h3>
+  <p>Robert T. Kiyosaki</p>
+  <div class="price">₹340.00</div>
+  <button class="btn" onclick="addToCart('Rich Dad Poor Dad', 340.00, 'Physical Book')">Add to Cart</button>
+</div>
+      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Online BookStore. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>

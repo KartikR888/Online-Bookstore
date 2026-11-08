@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookStore - Cart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">BookStore</a>
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop Books</a></li>
+        <li><a href="ebook.html">E-Books</a></li>
+        <li><a href="sellbook.html">Sell Books</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Shopping Cart</h2>
+    <div style="margin-top: 1rem;">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Format</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items-body">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <h3>Total: ₹<span id="cart-total">0.00</span></h3>
+        <a href="checkout.html" class="btn" style="text-decoration: none;">Proceed to Checkout</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Online BookStore. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script>
+    // Inline rendering logic to populate the cart table
+    function renderCart() {
+      const cart = getCart();
+      const tbody = document.getElementById("cart-items-body");
+      const totalElement = document.getElementById("cart-total");
+      tbody.innerHTML = "";
+
+      if (cart.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='4' style='text-align:center;'>Your cart is empty.</td></tr>";
+        totalElement.textContent = "0.00";
+        return;
+      }
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${item.title}</td>
+          <td>${item.type}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td><button class="btn-remove" onclick="removeFromCart(${index})">Remove</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      totalElement.textContent = total.toFixed(2);
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCart);
+  </script>
+</body>
+</html>

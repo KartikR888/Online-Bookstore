@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Your Book</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+    <nav>
+      <a href="index.html" class="logo">BookStore</a>
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop Books</a></li>
+        <li><a href="ebook.html">E-Books</a></li>
+        <li><a href="sellbook.html">Sell Books</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="header">
+      <h1>Sell Your Book</h1>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <form id="sellForm">
+            <div>
+              <label for="Type">Book Type</label>
+              <select id="Type">
+                <option>Normal Book</option>
+                <option>3D Book</option>
+                <option>Pratical Book</option>
+                <option>E Book</option>
+                <option>magical Book</option>
+              </select>
+            </div>
+
+          <div class="form-row">
+            <div>
+              <label for="bookTitle">Book Title</label>
+              <input type="text" id="bookTitle" placeholder="e.g. The Alchemist" required />
+            </div>
+            <div>
+              <label for="author">Author</label>
+              <input type="text" id="author" placeholder="e.g. Paulo Coelho" required />
+            </div>
+            <div>
+  <label for="file-upload">Upload a book cover or e-book PDF</label>
+  <input 
+    type="file" 
+    id="file-upload" 
+    name="file-upload" 
+    accept="image/*,application/pdf"
+  >
+</div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="category">Category</label>
+              <select id="category">
+                <option>Fiction</option>
+                <option>Science</option>
+                <option>History</option>
+                <option>Technology</option>
+                <option>Academic</option>
+              </select>
+            </div>
+            <div>
+              <label for="price">Price</label>
+              <input type="number" id="price" placeholder="500" min="0.01" step="0.01" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="condition">Condition</label>
+            <select id="condition">
+              <option>Like New</option>
+              <option>Good</option>
+              <option>Fair</option>
+              <option>Poor</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Write a short description of your book..."></textarea>
+          </div>
+
+          <button type="submit">List Book</button>
+          <p id="sell-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="book-preview card">
+        <div class="book-image">Book</div>
+        <h3 id="previewTitle">The Alchemist</h3>
+        <div id="previewAuthor">Paulo Coelho</div>
+        <div class="price" id="previewPrice">$500</div>
+        <div class="summary" id="previewSummary">
+          Condition: Like New<br />
+          Category: Fiction
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/books.js"></script>
+
+  <footer>
+    <p>&copy; 2026 Online BookStore. All rights reserved.</p>
+  </footer>
+</body>
+</html>
